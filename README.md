@@ -120,7 +120,7 @@ Observe what the traffic in Wireshark, you'll notice requests and replies, and i
 
 <br />
 <br />
-<storng>Step 3.1.1:</strong>Blocking ICMP in Ubuntu's Network Security Group
+<strong>Step 3.1.1:</strong> Blocking ICMP in Ubuntu's Network Security Group
 <br />
 <br />
 
