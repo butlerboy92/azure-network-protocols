@@ -42,8 +42,15 @@ You may name them whatever you'd like and use whatever username and password (<s
 <br />
 <em>VM-1 Windows 10</em>
 <br />
+<br />
 <p>
 <img src="https://i.imgur.com/TC2WeYr.jpg" height="80%" width="80%" alt="Creating Virtual Machine Windows 10"/>
+</p>
+
+<br />
+<br />
+<p>
+<img src="https://i.imgur.com/z8L3NWy.jpg" height="80%" width="80%" alt="Creating Virtual Machine Ubuntu Server"/>
 </p>
 
 
