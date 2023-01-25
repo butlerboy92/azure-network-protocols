@@ -22,7 +22,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Steps</h2>
 
 - Create VMs (Windows 10, Linux (Ubuntu Server))
-- Step 2
+- Install/Run Wireshark on VM with Windows 10
 - Step 3
 - Step 4
 
@@ -55,4 +55,27 @@ You may name them whatever you'd like and use whatever username and password (<s
 <img src="https://i.imgur.com/z8L3NWy.jpg" height="80%" width="80%" alt="Creating Virtual Machine Ubuntu Server"/>
 </p>
 
+<br />
+<br />
 
+<strong>Step 2:</strong>Install/Run Wireshark
+<br />
+<br />
+<p>
+On the virtual machine with Windows 10, download Wireshark (Windows Installer 64-bit) and continue with all the default options.
+<br />
+<br />
+Npcap will pop up to install, go ahead and install that with defaults and wireshark will continue to install after.
+<br />
+<br />
+Open Wirehsark in the VM, click Ethernet and then click the blue fin at the top left under 'File' to begin capturing packets. Notice all the traffic already happening that happens in the background.
+</p>
+<br />
+<br />
+
+<p>
+<img src="https://i.imgur.com/hRYo3PE.jpg" height="80%" width="80%" alt="Wireshark capturing packets"/>
+</p>
+
+<br />
+<br />
