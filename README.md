@@ -23,7 +23,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 - Create VMs (Windows 10, Linux (Ubuntu Server))
 - Install/Run Wireshark on VM with Windows 10
-- Step 3
+- Observing by Filtering Protocols
 - Step 4
 
 <h2>Actions and Observations</h2>
@@ -79,3 +79,88 @@ Open Wirehsark in the VM, click Ethernet and then click the blue fin at the top 
 
 <br />
 <br />
+
+<strong>Step 3:</strong> Observing Various Protocols
+<br />
+<br />
+<strong>Step 3.1:</strong> ICMP (Internet Control Messaging Protocol)
+
+<br />
+<br />
+
+<p>
+In Wireshark type in icmp to filter only icmp traffic (nothing should show at the moment)
+<br />
+<br />
+Back in Azure Portal, go to the Ubuntu Server VM and obtain the private IP address
+<br />
+<br />
+Back in the VM with Windows 10, open Windows Powershell and in the command line type ping (Private IP address from Ubuntu Server VM)
+<br />
+<br />
+Observe what the traffic in Wireshark, you'll notice requests and replies, and in powershell it will tell you how many packets sent, and how many made it or were lost.
+</p>
+
+<br />
+<br />
+<em>Grabbing Ubuntu Server VM's private IP from Azure</em>
+<br />
+<br />
+<p>
+<img src="https://i.imgur.com/YxeS3EG.jpg" height="80%" width="80%" alt="Ubuntu Server VM's Private IP Address"/>
+</p>
+
+<br />
+<br />
+<em>Pinging Ubuntu Server VM's private IP with Powershell in Windows 10 VM</em>
+<br />
+<br />
+<p>
+<img src="https://i.imgur.com/WaTEtVt.jpg" height="80%" width="80%" alt="Pinging Ubuntu Server VM's Private IP Address from Windows 10 VM"/>
+</p>
+
+<br />
+<br />
+<storng>Step 3.1.1:</strong>Blocking ICMP in Ubuntu's Network Security Group
+<br />
+<br />
+
+<p>
+In Windows 10 VM, in Powershell, send a continous ping by typing in the command line ping (Private IP address from Ubuntu Server VM) -t
+<br />
+<br />
+In Azure Portal search for Network Security Group and click on the VM that has Ubuntu Server
+<br />
+<br />
+From there click Inbound security rules, and click Add. Look for ICMP at the radio buttons and make sure it is ticked. Under Action check Deny. For priority set it before 300 just so we can have this rule take place before any other rule.
+<br />
+<br />
+Once this rule is created. go back to Powershell and notice it will say Request timed out, and observe in wireshark how only requests are being shown. 
+</p>
+
+<br />
+<br />
+<em>Pinging Ubuntu Server VM's private IP with Powershell in Windows 10 VM non-stop</em>
+<br />
+<br />
+<p>
+<img src="https://i.imgur.com/likADaX.jpg" height="80%" width="80%" alt="Pinging Ubuntu Server VM's Private IP Address from Windows 10 VM non-stop"/>
+</p>
+
+<br />
+<br />
+<em>Creating rule to deny ICMP in Ubuntu's NSG</em>
+<br />
+<br />
+<p>
+<img src="https://i.imgur.com/lfxfsvu.jpg" height="80%" width="80%" alt="NSG Inbound Rule to deny ICMP"/>
+</p>
+
+<br />
+<br />
+<em>Observing Ping request timing out</em>
+<br />
+<br />
+<p>
+<img src="https://i.imgur.com/46cwHyk.jpg" height="80%" width="80%" alt="Ping request timing out because of new rule"/>
+</p>
