@@ -46,7 +46,9 @@ You may name them whatever you'd like and use whatever username and password (<s
 <p>
 <img src="https://i.imgur.com/TC2WeYr.jpg" height="80%" width="80%" alt="Creating Virtual Machine Windows 10"/>
 </p>
-
+<br />
+<br />
+<em>VM-2 Ubuntu Server</em>
 <br />
 <br />
 <p>
